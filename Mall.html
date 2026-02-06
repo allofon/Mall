@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mall</title>
+  <style>
+    :root {
+      --bg-main: #f2f7f5;
+      --bg-card: #ffffff;
+      --bg-subtle: #eef6ff;
+      --border-soft: #dbeafe;
+      --accent: #3b82f6;
+      --accent-soft: #bfdbfe;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+    }
+html {
+  font-size: 17px;
+}
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      margin: 0;
+      padding: 1.5rem 1rem;
+      line-height: 1.45;
+      display: flex;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 650;
+      margin-bottom: 2.5rem;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 650;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      color: #1e3a8a;
+      position: relative;
+      left: -1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1e40af;
+    }
+
+    section {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-left: 5px solid #2563eb;
+      border-radius: 8px;
+      padding: 1.4rem 3rem 1.8rem 2.4rem; /* mer luft till höger */
+      margin-bottom: 1.8rem;
+    }
+
+section:hover {
+  background-color: #f8fbff;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+}
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      align-items: center;
+      column-gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+      }
+    }
+
+    fieldset {
+      border: 1px solid #e5e7eb;
+      border-left: 4px solid #c7d2fe;
+      border-radius: 6px;
+      padding: 1.1rem 2.2rem 1.6rem 1.8rem; /* mer höger-padding */
+      margin-top: 0.8rem;
+      margin-bottom: 1.2rem;
+      background-color: #f9fafb;
+    }
+
+    legend {
+      padding: 0 0.6rem;
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: #1e3a8a;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    label {
+      margin-bottom: 0.2rem;
+
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #111827;
+      text-align: right;
+      padding-right: 0.5rem;
+      white-space: nowrap;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      max-width: 460px; /* något smalare för mer luft */ /* något kortare inputs globalt */
+      padding: 0.45rem 0.6rem;
+      border: 1px solid #9ca3af;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      background-color: #ffffff;
+    }
+
+    fieldset input[type="text"] {
+      max-width: 420px;
+    } {
+      width: 100%;
+      max-width: 540px;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid #9ca3af;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      background-color: #ffffff;
+    }
+
+    fieldset input[type="text"] {
+      max-width: 420px; /* kortare inputs i trädboxar */
+    } {
+      width: 100%;
+      max-width: 540px;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid #9ca3af;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      background-color: #ffffff;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+
+    .agent-container .agent-block {
+      border: 1px solid #d1d5db;
+      border-left: 5px solid #60a5fa;
+      border-radius: 8px;
+      padding: 1.2rem 2rem 1.6rem 2.4rem;
+      margin-bottom: 1.6rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+button {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.action-btn {
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
+}
+
+.action-btn.danger {
+  background-color: #dc2626;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+}
+
+
+    button:hover { background-color: #2563eb; }
+    button:active { transform: translateY(1px); }
+
+    .app-container { width: 100%; max-width: 820px; }
+    
+    .section-summary {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  background: #f1f5f9;
+  border-left: 3px solid #93c5fd;
+  padding: 0.35rem 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+#reviewModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#reviewContent {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  font-size: 0.85rem;
+}
+
+#reviewContent h4 {
+  margin-top: 1.2rem;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#reviewModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none; /* VIKTIGT */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#reviewModal.open {
+  display: flex;
+}
+
+#reviewContent {
+  background: #ffffff;
+  padding: 1.6rem 2rem;
+  max-width: 720px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  font-size: 0.85rem;
+}
+
+#reviewContent h4 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#reviewBtn {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+
+
+#reviewSection {
+  margin-top: 2.5rem;
+  background: #f8fbff;
+  border: 1px solid #bfdbfe;
+  border-left: 6px solid #2563eb;
+  border-radius: 12px;
+  padding: 1.6rem 2.2rem 2rem 2.2rem;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+}
+
+#reviewSection h2 {
+  color: #1e3a8a;
+  margin-bottom: 1.6rem;
+  text-align: center;
+}
+
+#reviewSection h3 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1e40af;
+}
+
+#reviewSection div > div {
+  padding-left: 0.6rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+#reviewSection strong {
+  color: #111827;
+}
+
+#reviewSection {
+  background: #ffffff;
+  border: 1px dashed #93c5fd;
+  border-radius: 8px;
+  padding: 1.4rem 2rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.action-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(59,130,246,0.25);
+}
+
+.action-btn.danger {
+  background-color: #dc2626;
+  box-shadow: 0 4px 10px rgba(220,38,38,0.25);
+}
+
+
+/* Bas – exakt samma stil som dina andra knappar */
+.action-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
+}
+
+/* Hover */
+.action-btn:hover {
+  filter: brightness(0.95);
+}
+
+/* 🔴 RÖD variant */
+.action-btn.danger {
+  background-color: #dc2626;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+}
+.action-btn {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.45);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.action-btn.danger {
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+}
+
+.action-btn.danger:hover {
+  box-shadow: 0 10px 26px rgba(220, 38, 38, 0.45);
+}
+
+@media (max-width: 720px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  label {
+    text-align: left;
+    padding-right: 0;
+    font-size: 0.7rem;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+  }
+}
+
+@media (max-width: 720px) {
+  section {
+    padding: 1.2rem 1.2rem 1.4rem 1.2rem;
+  }
+
+  h2 {
+    left: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .review-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+
+  </style>
+</head>
+<body>
+<main class="app-container">
+
+<h1>Beskrivningsmall för tryckt monografisk resurs</h1>
+
+<section>
+  <h2>Manifestation</h2>
+
+  <div class="form-row">
+    <label for="mediaType">Medietyp</label>
+    <input id="mediaType" type="text">
+  </div>
+
+  <div class="form-row">
+    <label for="carrierType">Bärartyp</label>
+    <input id="carrierType" type="text">
+  </div>
+
+  <fieldset>
+    <legend>Titel</legend>
+    <div class="form-row">
+      <label for="mainTitle">Huvudtitel</label>
+      <input id="mainTitle" type="text">
+    </div>
+    <div class="form-row">
+      <label for="otherTitle">Övrig titelinformation</label>
+      <input id="otherTitle" type="text">
+    </div>
+  </fieldset>
+
+  <div class="form-row">
+    <label for="statement">Upphovsuppgift</label>
+    <input id="statement" type="text">
+  </div>
+
+  <div class="form-row">
+    <label for="edition">Upplageuppgift</label>
+    <input id="edition" type="text">
+  </div>
+
+  <fieldset>
+    <legend>Utgivning</legend>
+    <div class="form-row">
+      <label for="place">Utgivningsort</label>
+      <input id="place" type="text">
+    </div>
+    <div class="form-row">
+      <label for="publisher">Utgivarnamn</label>
+      <input id="publisher" type="text">
+    </div>
+    <div class="form-row">
+      <label for="year">Utgivningstid</label>
+      <input id="year" type="text">
+    </div>
+  </fieldset>
+
+  <div class="form-row"><label for="manufacture">Tillverkningstid</label><input id="manufacture" type="text"></div>
+  <div class="form-row"><label for="copyright">Copyrightår</label><input id="copyright" type="text"></div>
+  <div class="form-row"><label for="seriesNumber">Numrering inom serien</label><input id="seriesNumber" type="text"></div>
+  <div class="form-row"><label for="issn">ISSN</label><input id="issn" type="text"></div>
+  <div class="form-row"><label for="manifestationId">ID för manifestation</label><input id="manifestationId" type="text"></div>
+  <div class="form-row"><label for="extent">Omfång</label><input id="extent" type="text"></div>
+
+  <fieldset>
+    <legend>Relationer</legend>
+    <div class="form-row"><label for="relWork">Till verk</label><input id="relWork" type="text"></div>
+    <div class="form-row"><label for="relExpression">Till uttryck</label><input id="relExpression" type="text"></div>
+    <div class="form-row"><label for="relSeries">Till serie</label><input id="relSeries" type="text"></div>
+  </fieldset>
+</section>
+
+<section>
+  <h2>Agent</h2>
+  <div class="agent-container">
+    <div class="agent-block" data-agent="1">
+      <h3>Agent 1</h3>
+      <div class="form-row"><label>Föredraget namn</label><input type="text"></div>
+      <div class="form-row"><label>Födelse-/dödstid</label><input type="text"></div>
+      <div class="form-row"><label>ID</label><input type="text"></div>
+      <fieldset>
+        <legend>Relationer</legend>
+        <div class="form-row"><label>Till verk</label><input type="text"></div>
+        <div class="form-row"><label>Till uttryck</label><input type="text"></div>
+      </fieldset>
+    </div>
+  </div>
+  <button type="button" id="addAgentBtn">+ Lägg till agent</button>
+</section>
+
+<section>
+  <h2>Verk</h2>
+  <div class="form-row"><label for="workTitle">Föredragen titel</label><input id="workTitle" type="text"></div>
+  <div class="form-row"><label for="audience">Målgrupp</label><input id="audience" type="text"></div>
+  <div class="form-row"><label for="workId">ID</label><input id="workId" type="text"></div>
+  <fieldset>
+    <legend>Relationer</legend>
+    <fieldset>
+      <legend>Huvudskapare</legend>
+      <div class="form-row">
+        <label>RELATION TILL HUVUDSKAPARE</label>
+        <input type="text"  />
+      </div>
+      <div class="form-row">
+        <label>HUVUDSKAPARENS ROLL</label>
+        <input type="text" />
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Medskapare</legend>
+      <div class="form-row">
+        <label>RELATION TILL MEDSKAPARE</label>
+        <input type="text"  />
+      </div>
+      <div class="form-row">
+        <label>MEDSKAPARENS ROLL</label>
+        <input type="text" />
+      </div>
+    </fieldset>
+    <div class="form-row"><label for="workToExpression">Till uttryck</label><input id="workToExpression" type="text"></div>
+    <div class="form-row"><label for="workToManifestation">Till manifestation</label><input id="workToManifestation" type="text"></div>
+  </fieldset>
+</section>
+
+<section>
+  <h2>Uttryck</h2>
+  <div class="form-row"><label for="contentType">Innehållstyp</label><input id="contentType" type="text"></div>
+  <div class="form-row"><label for="language">Språk</label><input id="language" type="text"></div>
+  <div class="form-row"><label for="expressionId">ID</label><input id="expressionId" type="text"></div>
+  <fieldset>
+    <legend>Relationer</legend>
+    <fieldset>
+      <legend>Bidragsgivare</legend>
+      <div class="form-row">
+        <label>RELATION TILL BIDRAGSGIVARE</label>
+        <input type="text"  />
+      </div>
+      <div class="form-row">
+        <label>BIDRAGSGIVARENS ROLL</label>
+        <input type="text" />
+      </div>
+    </fieldset>
+    <div class="form-row"><label for="exprToWork">Till verk</label><input id="exprToWork" type="text"></div>
+    <div class="form-row"><label for="exprToManifestation">Till manifestation</label><input id="exprToManifestation" type="text"></div>
+  </fieldset>
+</section>
+
+<section>
+  <h2>Serie</h2>
+  <div class="form-row"><label for="seriesTitle">Huvudtitel</label><input id="seriesTitle" type="text"></div>
+  <div class="form-row"><label for="seriesId">ID / ISSN</label><input id="seriesId" type="text"></div>
+  <fieldset>
+    <legend>Relationer</legend>
+    <div class="form-row"><label for="seriesToManifestation">Till manifestation</label><input id="seriesToManifestation" type="text"></div>
+  </fieldset>
+</section>
+
+<script>
+  let agentCount = 1;
+
+  function createAgentBlock(number) {
+    const div = document.createElement('div');
+    div.className = 'agent-block';
+    div.dataset.agent = number;
+
+    div.innerHTML = `
+      <h3>Agent ${number}</h3>
+      <div class="form-row"><label>Föredraget namn</label><input type="text"></div>
+      <div class="form-row"><label>Födelse-/dödstid</label><input type="text"></div>
+      <div class="form-row"><label>ID</label><input type="text"></div>
+      <fieldset>
+        <legend>Relationer</legend>
+        <div class="form-row"><label>Till verk</label><input type="text"></div>
+        <div class="form-row"><label>Till uttryck</label><input type="text"></div>
+      </fieldset>
+    `;
+
+    return div;
+  }
+
+</script>
+<div class="review-actions">
+  <button id="reviewBtn" class="action-btn">
+    Granska ifyllda uppgifter
+  </button>
+
+  <button id="resetBtn" class="action-btn danger">
+    Återställ alla fält
+  </button>
+</div>
+
+<!-- Allt detta ska ligga EFTER knapparna -->
+<pre id="reviewOutput" style="display:none;"></pre>
+
+<section id="reviewSection" style="display:none;">
+  <h2>Granskning av ifyllda uppgifter</h2>
+  <div id="reviewContent"></div>
+</section>
+
+<script>
+document.getElementById("reviewBtn").addEventListener("click", () => {
+
+  const reviewSection = document.getElementById("reviewSection");
+  const reviewContent = document.getElementById("reviewContent");
+
+  reviewContent.innerHTML = "";
+  let hasContent = false;
+
+  document.querySelectorAll("section").forEach(section => {
+
+    // hoppa över granskningsrutan själv
+    if (section.id === "reviewSection") return;
+
+    const titleEl = section.querySelector("h2");
+    if (!titleEl) return;
+
+    let sectionRows = "";
+
+    section.querySelectorAll("input[type='text']").forEach(input => {
+      if (input.value.trim() === "") return;
+
+      hasContent = true;
+
+      let labelText = "Fält utan etikett";
+
+      const row = input.closest(".form-row");
+      if (row) {
+        const lbl = row.querySelector("label");
+        if (lbl) labelText = lbl.textContent.trim();
+      }
+
+      sectionRows += `<div><strong>${labelText}:</strong> ${input.value}</div>`;
+    });
+
+    if (sectionRows) {
+      reviewContent.innerHTML += `
+        <div style="margin-bottom:1.5rem;">
+          <h3>${titleEl.textContent}</h3>
+          ${sectionRows}
+        </div>
+      `;
+    }
+  });
+
+  if (!hasContent) {
+    reviewContent.innerHTML = "<em>Inga uppgifter ifyllda ännu.</em>";
+  }
+
+  reviewSection.style.display = "block";
+  reviewSection.scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  
+
+  document.querySelectorAll("input[type='text']").forEach(input => {
+    input.value = "";
+  });
+
+  // Dölj granskningsrutan om den är öppen
+  const reviewSection = document.getElementById("reviewSection");
+  if (reviewSection) {
+    reviewSection.style.display = "none";
+  }
+});
+
+</script>
+
+
+
+
+</main>
+</body>
+</html>
+
