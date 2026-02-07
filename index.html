@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <title>Mall</title>
   <style>
-    :root {
-      --bg-main: #f2f7f5;
-      --bg-card: #ffffff;
-      --bg-subtle: #eef6ff;
-      --border-soft: #dbeafe;
-      --accent: #3b82f6;
-      --accent-soft: #bfdbfe;
-      --text-main: #1f2937;
-      --text-muted: #4b5563;
-    }
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-subtle: #334155;
+  --border-soft: #475569;
+  --accent: #38bdf8;
+  --accent-soft: #7dd3fc;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+}
 html {
   font-size: 17px;
 }
@@ -22,7 +22,7 @@ html {
       background-color: var(--bg-main);
       color: var(--text-main);
       margin: 0;
-      padding: 1.5rem 1rem;
+      padding: 5rem 1rem 1.5rem;
       line-height: 1.45;
       display: flex;
       justify-content: center;
@@ -32,7 +32,7 @@ html {
       font-size: 1.8rem;
       font-weight: 650;
       margin-bottom: 2.5rem;
-      color: #0f172a;
+      color: #ffffff;
       text-align: center;
     }
 
@@ -56,16 +56,16 @@ html {
     }
 
     section {
-      background: #ffffff;
-      border: 1px solid #d1d5db;
-      border-left: 5px solid #2563eb;
+      background: #CDF2F7;
+      border: 1px solid #E9F5F0;
+      border-left: 5px solid #E9F5F0;
       border-radius: 8px;
       padding: 1.4rem 3rem 1.8rem 2.4rem; /* mer luft till höger */
       margin-bottom: 1.8rem;
     }
 
 section:hover {
-  background-color: #f8fbff;
+  background-color: #D2F5FA;
   box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
 }
 
@@ -97,13 +97,13 @@ section:hover {
     }
 
     fieldset {
-      border: 1px solid #e5e7eb;
-      border-left: 4px solid #c7d2fe;
+      border: 1px solid #D1E7E8;
+      border-left: 4px solid #2C3D6E;
       border-radius: 6px;
       padding: 1.1rem 2.2rem 1.6rem 1.8rem; /* mer höger-padding */
       margin-top: 0.8rem;
       margin-bottom: 1.2rem;
-      background-color: #f9fafb;
+      background-color: #C0E9F0;
     }
 
     legend {
@@ -170,11 +170,11 @@ section:hover {
 
     .agent-container .agent-block {
       border: 1px solid #d1d5db;
-      border-left: 5px solid #60a5fa;
+      border-left: 5px solid #2C3D6E;
       border-radius: 8px;
       padding: 1.2rem 2rem 1.6rem 2.4rem;
       margin-bottom: 1.6rem;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      background: linear-gradient(180deg, #E9F5F5 20%, #C0E9F0 80%);
     }
 
 button {
@@ -464,10 +464,360 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
+.remove-agent-btn {
+  background: #4D9E96;
+  color: #FAF7F7;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.remove-agent-btn:hover {
+  background-color: #A3D9D4;
+}
+
+.remove-agent-btn:active {
+  transform: translateY(1px);
+}
+#resetBtn {
+  background: linear-gradient(180deg, #475569, #334155);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.4);
+}
+
+#resetBtn:hover {
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.55);
+}
+
+/* Relationer i VERK */
+section:has(> h2:contains("Verk")) fieldset {
+  background-color: #C0E9F0;
+  border-left: 4px solid var(--accent);
+}
+
+/* Relationer i UTTRYCK */
+section:has(> h2:contains("Uttryck")) fieldset {
+  background-color: #C0E9F0;
+  border-left: 4px solid var(--accent);
+}
+
+/* Relationer i SERIE */
+section:has(> h2:contains("Serie")) fieldset {
+  background-color: #C0E9F0;
+  border-left: 4px solid var(--accent);
+}
+/* Endast relationsrutor i Verk */
+section.verk fieldset.relations {
+  background: linear-gradient(180deg, #E9F5F5 20%, #C0E9F0 80%);
+  border-left: 4px solid #2C3D6E;
+}
+/* Endast relationsrutor i Uttryck */
+section.uttryck fieldset.relations {
+  background: linear-gradient(180deg, #E9F5F5 20%, #C0E9F0 80%);
+
+  border-left: 4px solid #2C3D6E;
+}
+
+/* Endast relationsrutor i Serie */
+section.serie fieldset.relations {
+  background-color: #C0E9F0;
+  border-left: 4px solid #2C3D6E;
+}
+
+/* Relationer i VERK */
+section.verk > fieldset.relations {
+  background-color: #D8EAEB;
+  border-left: 4px solid #2C3D6E;
+}
+
+/* Relationer i UTTRYCK */
+section.uttryck > fieldset.relations {
+  background-color: #D8EAEB;
+  border-left: 4px solid #2C3D6E;
+}
+
+/* Relationer i SERIE */
+section.serie > fieldset.relations {
+  background-color: #C0E9F0;
+  border-left: 4px solid #2C3D6E;
+}
+#addAgentBtn {
+  background: linear-gradient(180deg, #4D9E96, #2F7F78);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(77, 158, 150, 0.35);
+}
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+
+.menu-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #020617;
+  border: 1px solid #334155;
+  display: none;
+  min-width: 200px;
+}
+
+
+#menu-level-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+#menu-level-2 {
+  top: 0;
+  left: 200px;
+}
+
+
+.menu-group {
+  position: relative;
+}
+
+
+
+.menu-center {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-panel button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #e5e7eb;
+  padding: 0;
+  text-align: left;
+}
+.menu-panel button:hover {
+  background: #1e293b;
+}
+
+.menu-item {
+  background: none;
+  color: #e5e7eb;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #1e293b;
+}
+
+.menu-center {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-entry {
+  position: relative;
+}
+
+/* === Firefox-lik toppmeny, isolerad === */
+
+.ff-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #020617;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ff-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.ff-menu > li {
+  position: relative;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  cursor: default;
+}
+
+.ff-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #020617;
+  border: 1px solid #334155;
+  min-width: 200px;
+  display: none;
+}
+
+.ff-menu > li:hover > .ff-submenu {
+  display: block;
+}
+
+.ff-submenu li {
+  padding: 0.4rem 0.6rem;
+  white-space: nowrap;
+}
+
+.ff-submenu li:hover {
+  background: #1e293b;
+}
+
+.ff-submenu a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+/* Gör så att ALLA li kan vara hover-föräldrar */
+.ff-menu li {
+  position: relative;
+}
+
+/* Visa undermenyer på ALLA nivåer */
+.ff-menu li:hover > .ff-submenu {
+  display: block;
+}
+
+/* Högerställda submenyer */
+.ff-submenu.right {
+  top: 0;
+  left: 100%;
+}
+.ff-menu,
+.ff-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ff-submenu li {
+  line-height: 1.4;
+}
+.ff-submenu a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+}
 
   </style>
 </head>
 <body>
+<nav class="ff-topbar">
+  <ul class="ff-menu">
+<li>
+  Relationer
+  <ul class="ff-submenu">
+
+    <li>
+      Manifestation
+      <ul class="ff-submenu right">
+        <li>– gestaltar VerkX</li>
+        <li>– gestaltar UttryckX</li>
+        <li>– är en del av SerieX</li>
+      </ul>
+    </li>
+
+    <li>
+      Agent
+      <ul class="ff-submenu right">
+        <li>– är skapare av VerkX</li>
+        <li>– är bidragsgivare till UttryckX</li>
+      </ul>
+    </li>
+
+    <li>
+      Verk
+      <ul class="ff-submenu right">
+        <li>– är skapat av AgentX</li>
+        <li>– förverkligas av UttryckX</li>
+        <li>– ingår i SerieX</li>
+        <li>– gestaltas av ManifestationX</li>
+      </ul>
+    </li>
+
+    <li>
+      Uttryck
+      <ul class="ff-submenu right">
+        <li>– är bidraget av AgentX</li>
+        <li>– förverkligar VerkX</li>
+        <li>– gestaltas av ManifestationX</li>
+      </ul>
+    </li>
+
+    <li>
+      Serie
+      <ul class="ff-submenu right">
+        <li>– inkluderar ManifestationX</li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+    <li>
+      Länkar
+      <ul class="ff-submenu">
+        <li>
+          <a href="https://libris.kb.se" target="_blank">Libris</a>
+        </li>
+        <li>
+          <a href="https://www.rdaregistry.info" target="_blank">RDA Registry</a>
+        </li>
+      </ul>
+    </li>
+   
+       <li>
+      Definitioner
+      <ul class="ff-submenu">
+        <li>
+          <a href="https://libris.kb.se" target="_blank">Libris</a>
+        </li>
+        <li>
+          <a href="https://www.rdaregistry.info" target="_blank">RDA Registry</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+</nav>
+
+
+
+<div id="menu-level-2" class="menu-panel"></div>
+
+
+
+<div id="menu-links" class="menu-panel">
+  <button>Extern länk</button>
+  <button>Intern länk</button>
+</div>
+
+
+
 <main class="app-container">
 
 <h1>Beskrivningsmall för tryckt monografisk resurs</h1>
@@ -553,15 +903,15 @@ input[type="text"]:focus {
       </fieldset>
     </div>
   </div>
-  <button type="button" id="addAgentBtn">+ Lägg till agent</button>
+  <button type="button" id="addAgentBtn"><strong>Lägg till agent</strong></button>
 </section>
 
-<section>
+<section class="verk">
   <h2>Verk</h2>
   <div class="form-row"><label for="workTitle">Föredragen titel</label><input id="workTitle" type="text"></div>
   <div class="form-row"><label for="audience">Målgrupp</label><input id="audience" type="text"></div>
   <div class="form-row"><label for="workId">ID</label><input id="workId" type="text"></div>
-  <fieldset>
+  <fieldset class="relations">
     <legend>Relationer</legend>
     <fieldset>
       <legend>Huvudskapare</legend>
@@ -590,12 +940,12 @@ input[type="text"]:focus {
   </fieldset>
 </section>
 
-<section>
+<section class="uttryck">
   <h2>Uttryck</h2>
   <div class="form-row"><label for="contentType">Innehållstyp</label><input id="contentType" type="text"></div>
   <div class="form-row"><label for="language">Språk</label><input id="language" type="text"></div>
   <div class="form-row"><label for="expressionId">ID</label><input id="expressionId" type="text"></div>
-  <fieldset>
+  <fieldset class="relations">
     <legend>Relationer</legend>
     <fieldset>
       <legend>Bidragsgivare</legend>
@@ -613,7 +963,7 @@ input[type="text"]:focus {
   </fieldset>
 </section>
 
-<section>
+<section class="relations">
   <h2>Serie</h2>
   <div class="form-row"><label for="seriesTitle">Huvudtitel</label><input id="seriesTitle" type="text"></div>
   <div class="form-row"><label for="seriesId">ID / ISSN</label><input id="seriesId" type="text"></div>
@@ -624,29 +974,94 @@ input[type="text"]:focus {
 </section>
 
 <script>
-  let agentCount = 1;
+let agentCount = 1;
+const agentContainer = document.querySelector(".agent-container");
+const addAgentBtn = document.getElementById("addAgentBtn");
 
-  function createAgentBlock(number) {
-    const div = document.createElement('div');
-    div.className = 'agent-block';
-    div.dataset.agent = number;
+function updateAgentNumbers() {
+  const agents = document.querySelectorAll(".agent-block");
+  agents.forEach((agent, index) => {
+    agent.dataset.agent = index + 1;
 
-    div.innerHTML = `
-      <h3>Agent ${number}</h3>
-      <div class="form-row"><label>Föredraget namn</label><input type="text"></div>
-      <div class="form-row"><label>Födelse-/dödstid</label><input type="text"></div>
-      <div class="form-row"><label>ID</label><input type="text"></div>
-      <fieldset>
-        <legend>Relationer</legend>
-        <div class="form-row"><label>Till verk</label><input type="text"></div>
-        <div class="form-row"><label>Till uttryck</label><input type="text"></div>
-      </fieldset>
-    `;
+    const title = agent.querySelector("h3 span");
+    if (title) {
+      title.textContent = `Agent ${index + 1}`;
+    }
+  });
 
-    return div;
-  }
+  agentCount = agents.length;
+}
+
+function createAgentBlock(number) {
+  const div = document.createElement("div");
+  div.className = "agent-block";
+  div.dataset.agent = number;
+
+  div.innerHTML = `
+    <h3 style="display:flex; justify-content:space-between; align-items:center;">
+      <span>Agent ${number}</span>
+      <button type="button" class="action-btn remove-agent-btn">
+        Ta bort
+      </button>
+    </h3>
+
+    <div class="form-row"><label>Föredraget namn</label><input type="text"></div>
+    <div class="form-row"><label>Födelse-/dödstid</label><input type="text"></div>
+    <div class="form-row"><label>ID</label><input type="text"></div>
+
+    <fieldset>
+      <legend>Relationer</legend>
+      <div class="form-row"><label>Till verk</label><input type="text"></div>
+      <div class="form-row"><label>Till uttryck</label><input type="text"></div>
+    </fieldset>
+  `;
+
+  div.querySelector(".remove-agent-btn").addEventListener("click", () => {
+    div.remove();
+    updateAgentNumbers();
+  });
+
+  return div;
+}
+
+addAgentBtn.addEventListener("click", () => {
+  agentCount++;
+  const newAgent = createAgentBlock(agentCount);
+  agentContainer.appendChild(newAgent);
+});
+
+
+function toggleMenu(button, menu) {
+  const rect = button.getBoundingClientRect();
+
+  menu.style.top = rect.bottom + "px";
+  menu.style.left = rect.left + "px";
+
+  menu.style.display =
+    menu.style.display === "block" ? "none" : "block";
+}
+
+// Relationer
+openBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  toggleMenu(openBtn, level1);
+  level2.style.display = "none";
+});
+
+// Länkar
+const openLinks = document.getElementById("openLinks");
+const linksMenu = document.getElementById("menu-links");
+
+openLinks.addEventListener("click", e => {
+  e.stopPropagation();
+  toggleMenu(openLinks, linksMenu);
+});
+
+
+
 
 </script>
+
 <div class="review-actions">
   <button id="reviewBtn" class="action-btn">
     Granska ifyllda uppgifter
@@ -734,10 +1149,78 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 
 </script>
 
+<script>
+const openBtn = document.getElementById("openRelations");
+const level1 = document.getElementById("menu-level-1");
+const level2 = document.getElementById("menu-level-2");
+level1.addEventListener("click", function (e) {
+  e.stopPropagation();
+});
 
+level2.addEventListener("click", function (e) {
+  e.stopPropagation();
+});
+
+
+openBtn.addEventListener("click", e => {
+  e.stopPropagation();
+
+  const rect = openBtn.getBoundingClientRect();
+
+  level1.style.top = rect.bottom + "px";
+  level1.style.left = rect.left + "px";
+
+  level1.style.display =
+    level1.style.display === "block" ? "none" : "block";
+
+  level2.style.display = "none";
+});
+
+const data = {
+  manifestation: ["- gestaltar VerkX", "- gestaltar UttryckX", "- är en del av SerieX"],
+  agent: ["- är skapare av VerkX", "- är bidragsgivare till UttryckX"],
+  verk: ["- är skapat av AgentX", "- förverkligas av UttryckX", "- ingår i SerieX", "- gestaltas av ManifestationX"],
+  uttryck: ["- är bidraget av AgentX", "- förverkligar VerkX", "- gestaltas av ManifestationX"],
+  serie: ["- inkluderar ManifestationX"],
+};
+
+const openLinks = document.getElementById("openLinks");
+const linksMenu = document.getElementById("links-menu");
+
+linksMenu.addEventListener("click", e => e.stopPropagation());
+
+openLinks.addEventListener("click", e => {
+  e.stopPropagation();
+  linksMenu.style.display =
+    linksMenu.style.display === "block" ? "none" : "block";
+});
+
+
+level1.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("mouseenter", () => {
+    const key = btn.dataset.open;
+    level2.innerHTML = "";
+
+    data[key].forEach(text => {
+      const b = document.createElement("button");
+      b.textContent = text;
+      level2.appendChild(b);
+    });
+
+    btn.parentElement.appendChild(level2);
+level2.style.display = "block";
+  });
+});
+
+document.addEventListener("click", () => {
+  level1.style.display = "none";
+  level2.style.display = "none";
+  linksMenu.style.display = "none";
+});
+
+</script>
 
 
 </main>
 </body>
 </html>
-
