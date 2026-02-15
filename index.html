@@ -28,7 +28,7 @@ html {
       color: var(--text-main);
       margin: 0;
       padding: 5rem 1rem 1.5rem;
-      line-height: 1.45;
+      line-height: 1.05;
       display: flex;
       justify-content: center;
     }
@@ -79,7 +79,7 @@ section:hover {
       grid-template-columns: 220px 1fr;
       align-items: center;
       column-gap: 1rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.55rem;
     }
 
     @media (max-width: 720px) {
@@ -101,15 +101,16 @@ section:hover {
       }
     }
 
-    fieldset {
-      border: 1px solid #D1E7E8;
-      border-left: 4px solid #2C3D6E;
-      border-radius: 6px;
-      padding: 1.1rem 2.2rem 1.6rem 1.8rem; /* mer höger-padding */
-      margin-top: 0.8rem;
-      margin-bottom: 1.2rem;
-      background-color: #C0E9F0;
-    }
+fieldset {
+  border: 1px solid #D1E7E8;
+  border-left: 4px solid #2C3D6E;
+  border-radius: 6px;
+  padding: 0.35rem 1.4rem 0.5rem 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  background-color: #C0E9F0;
+}
+
 
     legend {
       padding: 0 0.6rem;
@@ -134,9 +135,9 @@ section:hover {
     }
 
     input[type="text"] {
-      width: 100%;
-      max-width: 460px; /* något smalare för mer luft */ /* något kortare inputs globalt */
-      padding: 0.45rem 0.6rem;
+      width: 93%;
+      max-width: 660px; /* något smalare för mer luft */ /* något kortare inputs globalt */
+      padding: 0.25rem 0.6rem;
       border: 1px solid #9ca3af;
       border-radius: 6px;
       font-size: 0.85rem;
@@ -145,10 +146,9 @@ section:hover {
 
     fieldset input[type="text"] {
       max-width: 420px;
-    } {
-      width: 100%;
+      width: 80%;
       max-width: 540px;
-      padding: 0.45rem 0.6rem;
+      padding: 0.25rem 0.6rem;
       border: 1px solid #9ca3af;
       border-radius: 6px;
       font-size: 0.85rem;
@@ -156,11 +156,10 @@ section:hover {
     }
 
     fieldset input[type="text"] {
-      max-width: 420px; /* kortare inputs i trädboxar */
-    } {
-      width: 100%;
+      max-width: 400px; /* kortare inputs i trädboxar */
+      width: 90%;
       max-width: 540px;
-      padding: 0.45rem 0.6rem;
+      padding: 0.25rem 0.6rem;
       border: 1px solid #9ca3af;
       border-radius: 6px;
       font-size: 0.85rem;
@@ -192,14 +191,7 @@ button {
   cursor: pointer;
 }
 
-.action-btn {
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
-}
 
-.action-btn.danger {
-  background-color: #dc2626;
-  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
-}
 
 
     button:hover { background-color: #2563eb; }
@@ -378,48 +370,7 @@ button {
   box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
 }
 
-/* Hover */
-.action-btn:hover {
-  filter: brightness(0.95);
-}
 
-/* 🔴 RÖD variant */
-.action-btn.danger {
-  background-color: #dc2626;
-  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
-}
-.action-btn {
-  background: linear-gradient(180deg, #2563eb, #1e40af);
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  padding: 0.6rem 1.4rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.action-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.45);
-}
-
-.action-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-}
-
-.action-btn.danger {
-  background: linear-gradient(180deg, #dc2626, #991b1b);
-  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
-}
-
-.action-btn.danger:hover {
-  box-shadow: 0 10px 26px rgba(220, 38, 38, 0.45);
-}
 
 @media (max-width: 720px) {
   .form-row {
@@ -470,30 +421,12 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
-.remove-agent-btn {
-  background: #4D9E96;
-  color: #FAF7F7;
-  border: 1px solid #fecaca;
-  border-radius: 6px;
-  padding: 0.25rem 0.55rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  box-shadow: none;
-}
 
-.remove-agent-btn:hover {
-  background-color: #A3D9D4;
-}
 
-.remove-agent-btn:active {
-  transform: translateY(1px);
-}
+
 #resetBtn {
-  background: linear-gradient(180deg, #475569, #334155);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.4);
+  background: linear-gradient(180deg, #64748b, #475569);
+  color: #ffffff;
 }
 
 #resetBtn:hover {
@@ -552,11 +485,7 @@ section.serie > fieldset.relations {
   background-color: #C0E9F0;
   border-left: 4px solid #2C3D6E;
 }
-#addAgentBtn {
-  background: linear-gradient(180deg, #4D9E96, #2F7F78);
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(77, 158, 150, 0.35);
-}
+
 
 
 /* === Firefox-lik toppmeny, isolerad === */
@@ -732,9 +661,7 @@ section.serie > fieldset.relations {
 .ff-submenu li {
   padding: 0.4rem 1.2rem;
 }
-.ff-submenu > li {
-  position: relative;<meta name="viewport" content="width=device-width, initial-scale=1">
-}
+
 
 .ff-submenu > li > span,
 .ff-submenu > li:not(:has(ul)) {
@@ -766,12 +693,7 @@ section.serie > fieldset.relations {
   letter-spacing: 0.02em;
 }
 
-.ff-submenu a {
-  text-decoration: underline;<meta name="viewport" content="width=device-width, initial-scale=1">
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-  text-decoration-color: rgba(0,0,0,.35);
-}
+
 
 .ff-submenu a:hover {
   text-decoration-color: rgba(0,0,0,.8);
@@ -797,7 +719,7 @@ section.serie > fieldset.relations {
 .ff-topbar .ff-submenu li a {
   color: #000000;
   font-weight: 600;
-}<meta name="viewport" content="width=device-width, initial-scale=1">
+}
 
 
 
@@ -819,7 +741,7 @@ section.serie > fieldset.relations {
    ENHETLIG MENYLOGIK
    ========================= */
 
-/* Bas: all text i undermenyer */<meta name="viewport" content="width=device-width, initial-scale=1">
+/* Bas: all text i undermenyer */
 .ff-topbar .ff-submenu li {
   color: #000;
   font-weight: 600;
@@ -915,7 +837,7 @@ section.serie > fieldset.relations {
   transform: translateY(0);
   pointer-events: auto;
 }
-transform: translateY(10px) scale(0.98);
+
 
 .ff-submenu li + li {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -1096,8 +1018,197 @@ transform: translateY(10px) scale(0.98);
 .u {
   margin-right: 0.4em;
 }
+.action-btn {
+  background: #e5f3f7;
+  color: #0f172a;
+  border: 1px solid #94d3e8;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-	
+.action-btn:hover {
+  background: #d8eef5;
+  border-color: #38bdf8;
+}
+
+.remove-btn {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.remove-btn:hover {
+  background: #fecaca;
+}
+
+legend {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.legend-row .action-btn {
+  margin-left: auto;
+}
+
+legend .remove-btn {
+  margin-left: auto;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.legend-row .remove-btn {
+  margin-left: auto;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.agent-container .agent-block:first-child {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.form-row label::after {
+  content: " (ID)";
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+
+/* RESULTATRUTA */
+#reviewContent {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* Grundstruktur */
+.rda-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Hierarkinivåer */
+.rda-level {
+  padding-left: 10px;
+}
+
+.rda-level-1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.rda-level-2 {
+  margin-left: 20px;
+}
+
+.rda-level-3 {
+  margin-left: 40px;
+}
+
+.rda-level-4 {
+  margin-left: 60px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Entitetstyper */
+.rda-entity {
+  font-weight: 600;
+  color: #4A90E2;
+}
+
+/* Värden */
+.rda-value {
+  font-style: italic;
+  color: #222;
+}
+
+#reviewContent {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid #e6e6e6;
+}
+
+.rda-summary {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.rda-level {
+  margin-bottom: 0.8rem;
+}
+
+.rda-level-1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.rda-level-2 {
+  margin-left: 1.2rem;
+  color: #333;
+}
+
+.rda-level-3 {
+  margin-left: 2rem;
+  color: #444;
+}
+
+.rda-level-4 {
+  margin-left: 3rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.rda-entity {
+  background: #f0f4ff;
+  color: #2c4fd8;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.rda-summary {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+</style>
+
+
   </style>
 </head>
 <body>
@@ -1255,7 +1366,6 @@ transform: translateY(10px) scale(0.98);
       <ul class="ff-submenu right">
         <li>– <span class="u">är skapat av</span>&nbsp;AgentX</li>
         <li>– <span class="u">förverkligas av</span>&nbsp;UttryckX</li>
-        <li>– <span class="u">ingår i</span>&nbsp;SerieX</li>
         <li>– <span class="u">gestaltas av</span>&nbsp;ManifestationX</li>
       </ul>
     </li>
@@ -1395,7 +1505,7 @@ transform: translateY(10px) scale(0.98);
       </fieldset>
     </div>
   </div>
-  <button type="button" id="addAgentBtn"><strong>Lägg till agent</strong></button>
+  <button type="button" id="addAgentBtn" class="action-btn"><strong>Lägg till agent</strong></button>
 </section>
 
 <section class="verk">
@@ -1403,10 +1513,7 @@ transform: translateY(10px) scale(0.98);
   <div class="form-row"><label for="workTitle">Föredragen titel</label><input id="workTitle" type="text"></div>
   <div class="form-row"><label for="audience">Målgrupp</label><input id="audience" type="text"></div>
   <div class="form-row"><label for="workId">ID</label><input id="workId" type="text"></div>
-  <fieldset class="relations">
-    <legend>Relationer</legend>
-    <fieldset>
-      <legend>Huvudskapare</legend>
+<fieldset><legend>Huvudskapare</legend>
       <div class="form-row">
         <label>RELATION TILL HUVUDSK.</label>
         <input type="text"  />
@@ -1416,17 +1523,35 @@ transform: translateY(10px) scale(0.98);
         <input type="text" />
       </div>
     </fieldset>
-    <fieldset>
-      <legend>Medskapare</legend>
+<fieldset>
+  <legend>Medskapare</legend>
+
+  <div id="medskapareWrapper">
+    <fieldset class="medskapare-block">
+      <legend class="legend-row">
+  <span>Medskapare 1</span>
+</legend>
+
+
       <div class="form-row">
         <label>RELATION TILL MEDSK.</label>
-        <input type="text"  />
+        <input type="text" />
       </div>
+
       <div class="form-row">
         <label>MEDSKAPARENS ROLL</label>
         <input type="text" />
       </div>
     </fieldset>
+  </div>
+
+  <button type="button" id="addMedskapareBtn" class="action-btn">
+    Lägg till medskapare
+  </button>
+</fieldset>
+
+</fieldset>
+
     <div class="form-row"><label for="workToExpression">Till uttryck</label><input id="workToExpression" type="text"></div>
     <div class="form-row"><label for="workToManifestation">Till manifestation</label><input id="workToManifestation" type="text"></div>
   </fieldset>
@@ -1437,22 +1562,32 @@ transform: translateY(10px) scale(0.98);
   <div class="form-row"><label for="contentType">Innehållstyp</label><input id="contentType" type="text"></div>
   <div class="form-row"><label for="language">Språk</label><input id="language" type="text"></div>
   <div class="form-row"><label for="expressionId">ID</label><input id="expressionId" type="text"></div>
-  <fieldset class="relations">
-    <legend>Relationer</legend>
-    <fieldset>
-      <legend>Bidragsgivare</legend>
-      <div class="form-row">
-        <label>RELATION TILL BIDRAGSG.</label>
-        <input type="text"  />
-      </div>
-      <div class="form-row">
-        <label>BIDRAGSGIVARENS ROLL</label>
-        <input type="text" />
-      </div>
-    </fieldset>
-    <div class="form-row"><label for="exprToWork">Till verk</label><input id="exprToWork" type="text"></div>
-    <div class="form-row"><label for="exprToManifestation">Till manifestation</label><input id="exprToManifestation" type="text"></div>
+<fieldset class="relations">
+  <legend>Relationer</legend>
+
+  <fieldset>
+    <legend>Bidragsgivare</legend>
+    <div class="form-row">
+      <label>RELATION TILL BIDRAGSG.</label>
+      <input type="text" />
+    </div>
+    <div class="form-row">
+      <label>BIDRAGSGIVARENS ROLL</label>
+      <input type="text" />
+    </div>
   </fieldset>
+
+  <div class="form-row">
+    <label for="exprToWork">Till verk</label>
+    <input id="exprToWork" type="text">
+  </div>
+
+  <div class="form-row">
+    <label for="exprToManifestation">Till manifestation</label>
+    <input id="exprToManifestation" type="text">
+  </div>
+</fieldset>
+
 </section>
 
 <section class="relations">
@@ -1469,7 +1604,62 @@ transform: translateY(10px) scale(0.98);
 
 
 
+
+
+
+
+
+	
+
 <script>
+function collectRDA() {
+  const rda = {
+    agent: {},
+    work: {},
+    expression: {},
+    manifestation: {}
+  };
+
+  document.querySelectorAll("section").forEach(section => {
+    const title = section.querySelector("h2")?.textContent.trim();
+
+    section.querySelectorAll(".form-row").forEach(row => {
+      const label = row.querySelector("label")?.textContent.trim();
+      const input = row.querySelector("input");
+      if (!input || !input.value.trim()) return;
+
+      const value = input.value.trim();
+
+      if (title === "Agent") {
+        if (label === "Föredraget namn") rda.agent.name = value;
+        if (label === "Till verk") rda.agent.toWork = value;
+      }
+
+      if (title === "Verk") {
+        if (label === "Föredragen titel") rda.work.title = value;
+        if (label === "Till uttryck") rda.work.toExpression = value;
+      }
+
+      if (title === "Uttryck") {
+        if (label === "Innehållstyp") rda.expression.contentType = value;
+        if (label === "Språk") rda.expression.language = value;
+        if (label === "Till manifestation") rda.expression.toManifestation = value;
+      }
+
+      if (title === "Manifestation") {
+        if (label === "Huvudtitel") rda.manifestation.mainTitle = value;
+      }
+    });
+  });
+
+  return rda;
+}
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
 let agentCount = 1;
 const agentContainer = document.querySelector(".agent-container");
 const addAgentBtn = document.getElementById("addAgentBtn");
@@ -1496,7 +1686,7 @@ function createAgentBlock(number) {
   div.innerHTML = `
     <h3 style="display:flex; justify-content:space-between; align-items:center;">
       <span>Agent ${number}</span>
-      <button type="button" class="action-btn remove-agent-btn">
+      <button type="button" class="action-btn remove-btn">
         Ta bort
       </button>
     </h3>
@@ -1512,10 +1702,11 @@ function createAgentBlock(number) {
     </fieldset>
   `;
 
-  div.querySelector(".remove-agent-btn").addEventListener("click", () => {
-    div.remove();
-    updateAgentNumbers();
-  });
+div.querySelector(".remove-btn").addEventListener("click", () => {
+  div.remove();
+  updateAgentNumbers();
+});
+
 
   return div;
 }
@@ -1537,22 +1728,95 @@ function toggleMenu(button, menu) {
     menu.style.display === "block" ? "none" : "block";
 }
 
-// Relationer
-openBtn.addEventListener("click", e => {
-  e.stopPropagation();
-  toggleMenu(openBtn, level1);
-  level2.style.display = "none";
+const medskapareWrapper = document.getElementById("medskapareWrapper");
+const addMedskapareBtn = document.getElementById("addMedskapareBtn");
+
+function updateMedskapareNumbers() {
+  const blocks = medskapareWrapper.querySelectorAll(".medskapare-block");
+
+  blocks.forEach((block, index) => {
+    block.querySelector("legend span").textContent =
+      `Medskapare ${index + 1}`;
+
+    const removeBtn = block.querySelector(".remove-btn");
+    if (removeBtn) {
+      removeBtn.style.display = index === 0 ? "none" : "inline-block";
+    }
+  });
+}
+
+addMedskapareBtn.addEventListener("click", () => {
+  const template = medskapareWrapper.querySelector(".medskapare-block");
+  const clone = template.cloneNode(true);
+
+  // rensa inputs
+  clone.querySelectorAll("input").forEach(input => input.value = "");
+
+  const legend = clone.querySelector(".legend-row");
+
+  // skapa ta bort-knapp endast i kloner
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.className = "action-btn remove-btn";
+  removeBtn.textContent = "Ta bort";
+
+  removeBtn.addEventListener("click", () => {
+    clone.remove();
+    updateMedskapareNumbers();
+  });
+
+  legend.appendChild(removeBtn);
+  medskapareWrapper.appendChild(clone);
+
+  updateMedskapareNumbers();
 });
 
-// Länkar
-const openLinks = document.getElementById("openLinks");
-const linksMenu = document.getElementById("menu-links");
+const reviewBtn = document.getElementById("reviewBtn");
+const reviewContent = document.getElementById("reviewContent");
 
-openLinks.addEventListener("click", e => {
-  e.stopPropagation();
-  toggleMenu(openLinks, linksMenu);
-});
+if (reviewBtn) {
+  reviewBtn.addEventListener("click", () => {
 
+    const rda = collectRDA();
+
+    if (reviewContent) {
+      reviewContent.innerHTML = "";
+      reviewContent.appendChild(renderRDASummary(rda));
+      reviewContent.style.display = "block";
+    }
+const resetBtn = document.getElementById("resetBtn");
+
+if (resetBtn) {
+  resetBtn.addEventListener("click", () => {
+
+    // 1. Rensa alla input & textarea
+    document.querySelectorAll("input, textarea").forEach(el => {
+      el.value = "";
+    });
+
+    // 2. Dölj granskningen
+    const reviewContent = document.getElementById("reviewContent");
+    if (reviewContent) {
+      reviewContent.innerHTML = "";
+      reviewContent.style.display = "none";
+    }
+
+  });
+}    
+
+  }); // stänger addEventListener
+}     // stänger if (reviewBtn)
+
+});   // stänger DOMContentLoaded
+
+
+
+
+
+
+
+
+  
 </script>
 
 <script>
@@ -1577,184 +1841,202 @@ openLinks.addEventListener("click", e => {
 <!-- Allt detta ska ligga EFTER knapparna -->
 <pre id="reviewOutput" style="display:none;"></pre>
 
-<section id="reviewSection" style="display:none;">
-  <h2>Granska uppgifter</h2>
-  <div id="reviewContent"></div>
-</section>
-
+<div id="reviewContent" class="rda-container" style="display:none;"></div>
 <script>
-document.getElementById("reviewBtn").addEventListener("click", () => {
+/* ===============================
+   SÄKER RDA-RENDERING
+================================ */
+console.log("JS laddat");
 
-  const reviewSection = document.getElementById("reviewSection");
-  const reviewContent = document.getElementById("reviewContent");
+function renderRDASummary(rda) {
 
-  reviewContent.innerHTML = "";
-  let hasContent = false;
+  const wrapper = document.createElement("div");
+  wrapper.className = "rda-summary";
 
-  document.querySelectorAll("section").forEach(section => {
+  function addLevel(levelClass, builder) {
+    const div = document.createElement("div");
+    div.className = levelClass;
+    builder(div);
+    wrapper.appendChild(div);
+  }
 
-    // hoppa över granskningsrutan själv
-    if (section.id === "reviewSection") return;
+  if (rda.agent?.name) {
+    addLevel("rda-level rda-level-1", div => {
+      div.append(
+        Object.assign(document.createElement("span"), {
+          className: "rda-entity",
+          textContent: "Agent"
+        }),
+        document.createTextNode(" "),
+        Object.assign(document.createElement("span"), {
+          className: "rda-value",
+          textContent: rda.agent.name
+        })
+      );
+    });
+  }
 
-    const titleEl = section.querySelector("h2");
-    if (!titleEl) return;
+  if (rda.agent?.toWork && rda.work?.title) {
+    addLevel("rda-level rda-level-2", div => {
+      div.append(
+        document.createTextNode("↳ " + rda.agent.toWork + " "),
+        Object.assign(document.createElement("span"), {
+          className: "rda-entity",
+          textContent: "Verk"
+        }),
+        document.createTextNode(" “" + rda.work.title + "”")
+      );
+    });
+  }
 
-    let sectionRows = "";
+  if (rda.work?.toExpression &&
+      (rda.expression?.contentType || rda.expression?.language)) {
 
-    section.querySelectorAll("input[type='text']").forEach(input => {
-      if (input.value.trim() === "") return;
-
-      hasContent = true;
-
-      let labelText = "Fält utan etikett";
-
-      const row = input.closest(".form-row");
-      if (row) {
-        const lbl = row.querySelector("label");
-        if (lbl) labelText = lbl.textContent.trim();
-      }
-
-      sectionRows += `<div><strong>${labelText}:</strong> ${input.value}</div>`;
+    addLevel("rda-level rda-level-3", div => {
+      div.append(
+        document.createTextNode("↳ " + rda.work.toExpression + " "),
+        Object.assign(document.createElement("span"), {
+          className: "rda-entity",
+          textContent: "Uttryck"
+        })
+      );
     });
 
-    if (sectionRows) {
-      reviewContent.innerHTML += `
-        <div style="margin-bottom:1.5rem;">
-          <h3>${titleEl.textContent}</h3>
-          ${sectionRows}
-        </div>
-      `;
+    if (rda.expression.contentType) {
+      addLevel("rda-level rda-level-4", div => {
+        div.textContent = "Innehållstyp: " + rda.expression.contentType;
+      });
     }
-  });
 
-  if (!hasContent) {
-    reviewContent.innerHTML = "<em>Inga uppgifter ifyllda ännu.</em>";
+    if (rda.expression.language) {
+      addLevel("rda-level rda-level-4", div => {
+        div.textContent = "Språk: " + rda.expression.language;
+      });
+    }
   }
 
-  reviewSection.style.display = "block";
-  reviewSection.scrollIntoView({ behavior: "smooth" });
-});
+  if (rda.expression?.toManifestation &&
+      rda.manifestation?.mainTitle) {
 
-document.getElementById("resetBtn").addEventListener("click", () => {
-  
+    addLevel("rda-level rda-level-3", div => {
+      div.append(
+        document.createTextNode("↳ " + rda.expression.toManifestation + " "),
+        Object.assign(document.createElement("span"), {
+          className: "rda-entity",
+          textContent: "Manifestation"
+        })
+      );
+    });
 
-  document.querySelectorAll("input[type='text']").forEach(input => {
-    input.value = "";
-  });
+    addLevel("rda-level rda-level-4", div => {
+      const strong = document.createElement("strong");
+      strong.textContent = rda.manifestation.mainTitle;
+      div.appendChild(strong);
 
-  // Dölj granskningsrutan om den är öppen
-  const reviewSection = document.getElementById("reviewSection");
-  if (reviewSection) {
-    reviewSection.style.display = "none";
+      if (rda.manifestation.otherTitle)
+        div.append(" : " + rda.manifestation.otherTitle);
+
+      if (rda.manifestation.statement)
+        div.append(" / " + rda.manifestation.statement);
+    });
   }
-});
+
+
+  return wrapper;
+}
+
+const reviewBtn = document.getElementById("reviewBtn");
+const reviewContent = document.getElementById("reviewContent");
+
+if (reviewBtn) {
+  reviewBtn.addEventListener("click", () => {
+    const rda = collectRDA();   // måste finnas globalt
+    reviewContent.innerHTML = "";
+    reviewContent.appendChild(renderRDASummary(rda));
+    reviewContent.style.display = "block";
+  });
+}
+
+
 
 </script>
 
+
 <script>
+/* ===============================
+   MENYER
+================================ */
+
 const openBtn = document.getElementById("openRelations");
 const level1 = document.getElementById("menu-level-1");
 const level2 = document.getElementById("menu-level-2");
-level1.addEventListener("click", function (e) {
-  e.stopPropagation();
-});
-
-level2.addEventListener("click", function (e) {
-  e.stopPropagation();
-});
-
-
-openBtn.addEventListener("click", e => {
-  e.stopPropagation();
-
-  const rect = openBtn.getBoundingClientRect();
-
-  level1.style.top = rect.bottom + "px";
-  level1.style.left = rect.left + "px";
-
-  level1.style.display =
-    level1.style.display === "block" ? "none" : "block";
-
-  level2.style.display = "none";
-});
-
-const data = {
-  manifestation: ["- gestaltar VerkX", "- gestaltar UttryckX", "- är en del av SerieX"],
-  agent: ["- är skapare av VerkX", "- är bidragsgivare till UttryckX"],
-  verk: ["- är skapat av AgentX", "- förverkligas av UttryckX", "- ingår i SerieX", "- gestaltas av ManifestationX"],
-  uttryck: ["- är bidraget av AgentX", "- förverkligar VerkX", "- gestaltas av ManifestationX"],
-  serie: ["- inkluderar ManifestationX"],
-};
-
 const openLinks = document.getElementById("openLinks");
 const linksMenu = document.getElementById("links-menu");
 
-linksMenu.addEventListener("click", e => e.stopPropagation());
+if (openBtn && level1 && level2) {
 
-openLinks.addEventListener("click", e => {
-  e.stopPropagation();
-  linksMenu.style.display =
-    linksMenu.style.display === "block" ? "none" : "block";
-});
+  const data = {
+    manifestation: ["- gestaltar VerkX", "- gestaltar UttryckX"],
+    agent: ["- är skapare av VerkX"],
+    verk: ["- förverkligas av UttryckX"],
+    uttryck: ["- förverkligar VerkX"],
+    serie: ["- inkluderar ManifestationX"]
+  };
 
+  level1.addEventListener("click", e => e.stopPropagation());
+  level2.addEventListener("click", e => e.stopPropagation());
 
-level1.querySelectorAll("button").forEach(btn => {
-  btn.addEventListener("mouseenter", () => {
-    const key = btn.dataset.open;
-    level2.innerHTML = "";
+  openBtn.addEventListener("click", e => {
+    e.stopPropagation();
 
-    data[key].forEach(text => {
-      const b = document.createElement("button");
-      b.textContent = text;
-      level2.appendChild(b);
-    });
+    const rect = openBtn.getBoundingClientRect();
+    level1.style.top = rect.bottom + "px";
+    level1.style.left = rect.left + "px";
 
-    btn.parentElement.appendChild(level2);
-level2.style.display = "block";
+    level1.style.display =
+      level1.style.display === "block" ? "none" : "block";
+
+    level2.style.display = "none";
   });
-});
+
+  level1.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+      const key = btn.dataset.open;
+      if (!data[key]) return;
+
+      level2.innerHTML = "";
+
+      data[key].forEach(text => {
+        const b = document.createElement("button");
+        b.textContent = text;
+        level2.appendChild(b);
+      });
+
+      btn.parentElement.appendChild(level2);
+      level2.style.display = "block";
+    });
+  });
+}
+
+if (openLinks && linksMenu) {
+  linksMenu.addEventListener("click", e => e.stopPropagation());
+
+  openLinks.addEventListener("click", e => {
+    e.stopPropagation();
+    linksMenu.style.display =
+      linksMenu.style.display === "block" ? "none" : "block";
+  });
+}
 
 document.addEventListener("click", () => {
-  level1.style.display = "none";
-  level2.style.display = "none";
-  linksMenu.style.display = "none";
+  if (level1) level1.style.display = "none";
+  if (level2) level2.style.display = "none";
+  if (linksMenu) linksMenu.style.display = "none";
 });
 
 </script>
-<script>
-  document.getElementById("reviewButton").addEventListener("click", () => {
-    document.getElementById("awesomeMessage").classList.add("show");
-  });
-</script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("reviewBtn");
-    const msg = document.getElementById("awesomeMessage");
 
-    if (!btn || !msg) {
-      console.warn("Knapp eller meddelande hittades inte");
-      return;
-    }
-
-    btn.addEventListener("click", () => {
-      msg.classList.add("show");
-    });
-  });
-</script>
-<div id="awesomeMessage" class="awesome-message">
-  awesome dude 😎
-</div>
-<script>
-document.querySelectorAll('.ff-menu > li').forEach(item => {
-  item.addEventListener('click', function (e) {
-    if (window.innerWidth <= 768) {
-      e.stopPropagation();
-      this.classList.toggle('open');
-    }
-  });
-});
-</script>
 
 </main>
 </body>
